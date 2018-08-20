@@ -1,0 +1,39 @@
+Step 1:
+Loading the code :
+	1. Download and install ccs 7.4 from http://processors.wiki.ti.com/index.php/Download_CCS, read documentation on how to install and set 	up environment properly.
+	Make sure to flash mmwave sdk 1.02 on mmwave using Unifash tool
+	2.create new workspace
+	3. Go to view -> target config
+	4. create a new configuration, select XWR1642. XDS110 and test connection
+	5. right click target configuration and launch it.
+	6. select individually each of the XDS110 Debug and select connect to target
+	7. Once both targets are connected, select the C674X_0 target, and click on the Load button in the toolbar to load dss (first config) 		located in (~/ti/demo/xwr16xx/mmw/xwr16xx_mmw_demo_dss.xe674 and ~/ti/demo/xwr16xx/mmw/xwr16xx_mmw_demo_mss.xer4f)
+	refer to http://dev.ti.com/tirex/#/?link=Software%2FmmWave%20Sensors%2FIndustrial%20Toolbox%2FLabs%2FmmWave%20SDK%20Demo%20-%2016xx%	2FSetup%20Guide (for flashing mss and dss)
+
+Step 2 :
+Sending configuration file
+	1. Download config file from mmwave visualiser. make sure all the check boxes at the bottom are checked. Edit config to remove all 		commented lines and sensor stop. 
+	2. Download and open cutecom, set config port ( first port observed) and set baud rate 115200
+	3. If there happens to be junk data when you open device, close device and open again
+	4. Select to config file and send the file
+	5. make sure the char delay is 10ms and uncheck Hardware option
+
+Step 3 :
+	1. To view the fft plot for the selected bins $ python plotDump.py
+	make sure to edit data port inside the file
+	2. once the frames are done recording, ctrl z to exit. pkill -9 python to stop program from running.
+	
+Step 4 :
+Editing the code :
+	1. To make changes to the code, move to ~/ti/demo/xwr16xx/mmw/mss/mss_main.c and change the respective start and stop range bins found 		in the MmwDEmo_mBoxReadTask function.
+	2. to make:
+	set environment : navigate to ~/ti/demo/xwr16xx/mmw folder and execute $ source setenv.sh
+	$ cd ~/mmw
+	$ make clean
+	$ make all
+	
+	the two linker files .xer4f and .xe674 are created
+	Make sure to have changed the start and stop range bins in the plotDump.py folder
+	
+
+
