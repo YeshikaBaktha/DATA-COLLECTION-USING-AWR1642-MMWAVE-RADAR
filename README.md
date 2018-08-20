@@ -1,1 +1,1 @@
-This repository describes the process of collecting data from the mmwave AWR1642 radar.The range bins used here are from 9 to 16, specific to the config files mentioned in the folder ~/configs. Please read the .txt file for implementation. 
+This repository describes the process of collecting data from the mmwave AWR1642 radar.The range bins used here are from 9 to 16, specific to the config files mentioned in the folder ~/configs. Please read the .txt file for implementation. Find the entire folder here https://drive.google.com/open?id=1fC1U_p-zB3QJpWT-mAEZ6fxrZtij8EdL
