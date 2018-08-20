@@ -1,1 +1,1 @@
-# DATA-COLLECTION-USING-AWR1642-MMWAVE-RADAR
+This repository describes the process of collecting data from the mmwave AWR1642 radar.The range bins used here are from 9 to 16, specific to the config files mentioned in the folder ~/configs. Please read the .txt file for implementation. 
